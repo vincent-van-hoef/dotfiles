@@ -24,17 +24,6 @@ Plugin 'scrooloose/nerdtree'
 	let R_in_buffer = 0
 	let R_applescript = 0
 	let R_tmux_split = 1
-	" An example for a gvimrc file.
-	" The commands in this are executed when the GUI is started.
-	"
-	" Maintainer:	Bram Moolenaar <Bram@vim.org>
-	" Last change:	2001 Sep 02
-	"
-	" To use it, copy it to
-	"     for Unix and OS/2:  ~/.gvimrc
-	"	      for Amiga:  s:.gvimrc
-	"  for MS-DOS and Win32:  $VIM\_gvimrc
-	"	    for OpenVMS:  sys$login:.gvimrc
 
 	" Make external commands work through a pipe instead of a pseudo-tty
 	"set noguipty

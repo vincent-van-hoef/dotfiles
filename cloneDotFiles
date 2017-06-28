@@ -1,0 +1,4 @@
+cd ~
+git clone https://github.com/vincent-van-hoef/dotfiles.git
+mv dotfiles/* dotfiles/.* .
+rm -f dotfiles

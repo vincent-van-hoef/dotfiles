@@ -28,9 +28,6 @@ let R_tmux_split = 1
 " Make external commands work through a pipe instead of a pseudo-tty
 "set noguipty
 
-" set the X11 font to use
-" set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
-
 set ch=2		" Make command line two lines high
 
 set mousehide		" Hide the mouse when typing text

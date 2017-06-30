@@ -3,3 +3,7 @@
 	name = vincent-van-hoef
 [push]
 	default = simple
+[alias]
+	gitls = ls-tree -r master --name-only
+[core]
+	editor = vim

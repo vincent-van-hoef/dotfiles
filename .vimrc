@@ -20,7 +20,7 @@ call vundle#end()
 filetype plugin indent on
 
 colorscheme wombat
-"let R_term = "xterm"
+" let R_term = "xterm"
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1

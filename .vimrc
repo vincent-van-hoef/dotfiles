@@ -15,6 +15,9 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jalvesaq/Nvim-r'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mbbill/undotree'
+
+nnoremap <F5> :UndotreeToggle<cr>
 
 call vundle#end()
 filetype plugin indent on

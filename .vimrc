@@ -10,14 +10,16 @@ call vundle#begin('~/.vim/bundle/')
   
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jalvesaq/Nvim-r'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
 
+
 nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <F6> :NERDTRee<cr>
 
 call vundle#end()
 filetype plugin indent on
@@ -27,6 +29,9 @@ colorscheme wombat
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
+
+set undofile
+set undodir=~/undodir
 
 " Make external commands work through a pipe instead of a pseudo-tty
 "set noguipty

@@ -10,16 +10,32 @@ call vundle#begin('~/.vim/bundle/')
   
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jalvesaq/Nvim-r'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 
+" autoclose youcompleteme window
+let g:ycm_autoclose_preview_window_after_completion=1
 
 nnoremap <F5> :UndotreeToggle<cr>
 nnoremap <F6> :NERDTRee<cr>
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let mapleader=";"
+let maplocalleader =","
 
 call vundle#end()
 filetype plugin indent on
@@ -33,11 +49,30 @@ let R_tmux_split = 1
 set undofile
 set undodir=~/undodir
 
+" set indentation for Python files
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
+
+" Flag unnecessary whitespace
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+set encoding=utf-8
+
+let python_highlight_all=1
+syntax on
+
 " Make external commands work through a pipe instead of a pseudo-tty
 "set noguipty
 
 set ch=2		" Make command line two lines high
 set mousehide		" Hide the mouse when typing text
+set showcmd
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>

@@ -12,6 +12,9 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# set vim as standard editor
+export VISUAL=vim
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -88,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias box='cd /mnt/c/Users/Vincent/Dropbox/KI/'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

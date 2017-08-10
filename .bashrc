@@ -119,3 +119,6 @@ fi
 
 export PATH=/usr/local/bin:$PATH
 export DISPLAY=:0
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/home/vvanhoef/miniconda3/bin:$PATH"

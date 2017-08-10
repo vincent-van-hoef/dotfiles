@@ -1,7 +1,20 @@
+let mapleader=";"
+let maplocalleader =","
+
 set nocompatible              " be iMproved, required
 set number
 filetype off                  " required
  
+" vimwiki
+let g:vimwiki_list = [{'path': '/mnt/c/Users/Vincent/Dropbox/vimwiki',
+			\ 'template_path': '/mnt/c/Users/Vincent/Dropbox/vimwiki/templates',
+			\ 'template_default': 'default',
+			\ 'template_ext': '.html',
+			\ 'path_html': '/mnt/c/Users/Vincent/Dropbox/vimwiki/html',
+			\ 'auto_export': 1,
+			\ 'auto_toc': 1,
+			\ 'diary_sort': 'asc'}]
+:map <Leader>tt <Plug>VimwikiToggleListItem
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#begin()
@@ -21,6 +34,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Plugin 'vimwiki/vimwiki'
+Plugin 'mattn/calendar-vim'
 
 " autoclose youcompleteme window
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -33,9 +48,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-let mapleader=";"
-let maplocalleader =","
 
 call vundle#end()
 filetype plugin indent on
@@ -61,6 +73,10 @@ au BufNewFile,BufRead *.py set fileformat=unix
 " Flag unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+"set snakemake syntax
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *smk set syntax=snakemake
 
 set encoding=utf-8
 
@@ -111,3 +127,8 @@ highlight Constant gui=NONE guibg=grey95
 highlight Special gui=NONE guibg=grey95
 
 endif
+
+
+
+
+
